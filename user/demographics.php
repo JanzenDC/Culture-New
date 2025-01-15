@@ -168,7 +168,7 @@
         <div class="journal-grid">
             <!-- Journal Card 1 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Population Growth">
+                <img src="population.jpg" alt="Population Growth">
                 <div class="journal-card-content">
                     <h3>Population Growth</h3>
                     <p>Explore how rapid population growth impacts urbanization, resources, and cultural evolution.</p>
@@ -178,7 +178,7 @@
 
             <!-- Journal Card 2 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Migration Patterns">
+                <img src="migration.jpg" alt="Migration Patterns">
                 <div class="journal-card-content">
                     <h3>Migration Patterns</h3>
                     <p>Understand how migration, both voluntary and forced, shapes demographic changes and cultural exchange.</p>
@@ -188,7 +188,7 @@
 
             <!-- Journal Card 3 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Age Distribution">
+                <img src="age.jpg" alt="Age Distribution">
                 <div class="journal-card-content">
                     <h3>Age Distribution</h3>
                     <p>Learn about the effect of age distribution on economic and social structures, from the elderly to the youth.</p>
@@ -198,7 +198,7 @@
 
             <!-- Journal Card 4 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Urbanization and Demographics">
+                <img src="urbanization.jpg" alt="Urbanization and Demographics">
                 <div class="journal-card-content">
                     <h3>Urbanization and Demographics</h3>
                     <p>Explore how urbanization influences demographic patterns, such as population density and migration.</p>
@@ -208,7 +208,7 @@
 
             <!-- Journal Card 5 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Gender Demographics">
+                <img src="gender.jpg" alt="Gender Demographics">
                 <div class="journal-card-content">
                     <h3>Gender Demographics</h3>
                     <p>Examine how gender distribution affects economic participation, political influence, and social roles.</p>
@@ -218,7 +218,7 @@
 
             <!-- Journal Card 6 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Rural vs Urban Populations">
+                <img src="urban.jpg" alt="Rural vs Urban Populations">
                 <div class="journal-card-content">
                     <h3>Rural vs Urban Populations</h3>
                     <p>Study the demographic differences between rural and urban populations and their cultural implications.</p>
@@ -228,7 +228,7 @@
 
             <!-- Journal Card 7 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Ethnic and Racial Demographics">
+                <img src="ethnic.jpg" alt="Ethnic and Racial Demographics">
                 <div class="journal-card-content">
                     <h3>Ethnic and Racial Demographics</h3>
                     <p>Explore the relationship between ethnic and racial diversity and cultural practices in different societies.</p>
@@ -238,7 +238,7 @@
 
             <!-- Journal Card 8 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Population Aging">
+                <img src="aging.jpg" alt="Population Aging">
                 <div class="journal-card-content">
                     <h3>Population Aging</h3>
                     <p>Investigate the effects of an aging population on social services, culture, and labor markets.</p>

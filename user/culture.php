@@ -168,7 +168,7 @@
         <div class="journal-grid">
             <!-- Journal Card 1 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Cultural Traditions">
+                <img src="tradition.jpg" alt="Cultural Traditions">
                 <div class="journal-card-content">
                     <h3>Cultural Traditions</h3>
                     <p>Explore the rich traditions and customs that have been passed down through generations.</p>
@@ -178,7 +178,7 @@
 
             <!-- Journal Card 2 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Language and Communication">
+                <img src="language.jpg" alt="Language and Communication">
                 <div class="journal-card-content">
                     <h3>Language and Communication</h3>
                     <p>Understand how language serves as a foundation for communication, identity, and cultural expression.</p>
@@ -188,7 +188,7 @@
 
             <!-- Journal Card 3 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Art and Expression">
+                <img src="art.jpg" alt="Art and Expression">
                 <div class="journal-card-content">
                     <h3>Art and Expression</h3>
                     <p>Discover the role of art, from visual arts to music and dance, in shaping cultural identities.</p>
@@ -198,7 +198,7 @@
 
             <!-- Journal Card 4 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Religious Practices">
+                <img src="religion.jpg" alt="Religious Practices">
                 <div class="journal-card-content">
                     <h3>Religious Practices</h3>
                     <p>Explore how religion influences cultural values, customs, and social behavior around the world.</p>
@@ -208,7 +208,7 @@
 
             <!-- Journal Card 5 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Cultural Heritage">
+                <img src="heritage1.jpg" alt="Cultural Heritage">
                 <div class="journal-card-content">
                     <h3>Cultural Heritage</h3>
                     <p>Learn about the preservation of cultural heritage and its impact on identity and history.</p>
@@ -218,7 +218,7 @@
 
             <!-- Journal Card 6 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Cuisine and Culture">
+                <img src="cuisine.jpg" alt="Cuisine and Culture">
                 <div class="journal-card-content">
                     <h3>Cuisine and Culture</h3>
                     <p>Explore the deep connection between food, cooking traditions, and cultural identity.</p>
@@ -228,7 +228,7 @@
 
             <!-- Journal Card 7 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Folklore and Mythology">
+                <img src="folklore.jpg" alt="Folklore and Mythology">
                 <div class="journal-card-content">
                     <h3>Folklore and Mythology</h3>
                     <p>Discover the myths, legends, and stories that have shaped cultures throughout history.</p>
@@ -238,7 +238,7 @@
 
             <!-- Journal Card 8 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Cultural Diversity">
+                <img src="diversity.jpg" alt="Cultural Diversity">
                 <div class="journal-card-content">
                     <h3>Cultural Diversity</h3>
                     <p>Study the importance of cultural diversity and how it fosters global understanding and cooperation.</p>
