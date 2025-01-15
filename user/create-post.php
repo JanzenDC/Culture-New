@@ -202,7 +202,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <input type="text" name="title" placeholder="Title" maxlength="300" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%;">
 
         <!-- Description Input -->
-        <textarea name="description" placeholder="Caption..." style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%; height: 120px;" required></textarea>
+        <textarea name="description" placeholder="Caption..." style="padding: 30px; border: 1px solid #ccc; border-radius: 4px; width: 100%; height: 120px;" required></textarea>
 
         <!-- File Upload -->
         <input type="file" name="file" accept="image/*,video/*" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%;"> 
