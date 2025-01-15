@@ -542,24 +542,6 @@ showSlide(currentSlide);
                     <li><a href="culture.php">Culture</a></li>
                 </ul>
             </div>
-
-        <div class="menu-section">
-            <h3>Learning Styles</h3>
-            <div class="menu-item">
-                <ul>
-                    <li><input type="checkbox">Visual</li>
-                    <li><input type="checkbox">Auditory & Oral</li>
-                    <li><input type="checkbox">Read & Write</li>
-                    <li><input type="checkbox">Kinesthetic</li>
-                </ul>
-            </div>
-
-        <div class="menu-section">
-            <h3>Location</h3>
-            <div class="menu-item">
-                <a href="choose-loc.php"><span>+</span> Choose a location</a>
-            </div>
-        </div>
         
     <div class="menu-section">
       <h3>Resources</h3>
