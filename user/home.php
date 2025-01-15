@@ -43,9 +43,9 @@ if (!isset($_SESSION['user_id'])) {
             <h1>Kulturabase</h1>
         </div>
         <div>
-                <a href="home.php">Home</a>
+                <a href="home.php" class="active">Home</a>
                 <a href="create-post.php">+ Create</a>
-                <a href="explore.php" class="active">Explore</a>
+                <a href="explore.php">Explore</a>
                 <a href="notification.php">Notification</a>
                 <div class="dropdown">
                     <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Menu</a>

@@ -168,7 +168,7 @@
         <div class="journal-grid">
             <!-- Journal Card 1 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Mountain Culture">
+                <img src="mountain.jpg" alt="Mountain Culture">
                 <div class="journal-card-content">
                     <h3>Mountains and Culture</h3>
                     <p>Explore how mountainous regions shape the traditions and lifestyles of communities.</p>
@@ -178,7 +178,7 @@
 
             <!-- Journal Card 2 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="River Systems">
+                <img src="role_river.jpg" alt="River Systems">
                 <div class="journal-card-content">
                     <h3>The Role of Rivers</h3>
                     <p>Understand how rivers impact trade, settlements, and cultural development over time.</p>
@@ -188,7 +188,7 @@
 
             <!-- Journal Card 3 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Urban Geography">
+                <img src="urban_geo.jpg" alt="Urban Geography">
                 <div class="journal-card-content">
                     <h3>Urban Geography</h3>
                     <p>Discover the influence of geography on city planning and urbanization patterns.</p>
@@ -198,7 +198,7 @@
 
             <!-- Journal Card 4 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Climate Impact">
+                <img src="climate_culture.jpg" alt="Climate Impact">
                 <div class="journal-card-content">
                     <h3>Climate and Culture</h3>
                     <p>From deserts to rainforests, learn how climates shape civilizations and their practices.</p>
@@ -208,7 +208,7 @@
 
             <!-- Journal Card 5 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Cultural Landscapes">
+                <img src="landscape.jpg" alt="Cultural Landscapes">
                 <div class="journal-card-content">
                     <h3>Cultural Landscapes</h3>
                     <p>The dynamic interaction of human activities with the natural environment over time.</p>
@@ -218,7 +218,7 @@
 
             <!-- Journal Card 6 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Agricultural Geography">
+                <img src="agri_geo.jpg" alt="Agricultural Geography">
                 <div class="journal-card-content">
                     <h3>Agricultural Geography</h3>
                     <p>Study how geography influences agricultural techniques and food production systems.</p>
@@ -228,7 +228,7 @@
 
             <!-- Journal Card 7 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Coastal Studies">
+                <img src="coastal1.jpg" alt="Coastal Studies">
                 <div class="journal-card-content">
                     <h3>Coastal Geography</h3>
                     <p>Explore the impact of coastal environments on trade, tourism, and culture.</p>
@@ -238,7 +238,7 @@
 
             <!-- Journal Card 8 -->
             <div class="journal-card">
-                <img src="https://via.placeholder.com/300x150" alt="Desert Studies">
+                <img src="desert_landscape.jpg" alt="Desert Studies">
                 <div class="journal-card-content">
                     <h3>Desert Landscapes</h3>
                     <p>Investigate the unique challenges and adaptations of desert environments.</p>
