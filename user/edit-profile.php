@@ -99,7 +99,7 @@ $conn->close();
             <h1>Kulturabase</h1>
         </div>
         <div>
-            <a href="edit-profile.php">Home</a>
+            <a href="home.php">Home</a>
             <a href="create-post.php">+ Create</a>
             <a href="explore.php">Explore</a>
             <a href="notification.php">Notification</a>
