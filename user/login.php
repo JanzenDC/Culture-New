@@ -101,7 +101,7 @@ $conn->close();
                     <a href="settings.php">Settings</a>
                 </div>
             </div>
-            <a href="login.php" class="active">Log Out</a>
+            <a href="login.php">Log Out</a>
         </div>
     </div>
 
