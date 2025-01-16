@@ -750,7 +750,7 @@ if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] != 1) {
                 </ul>
             </div>
 
-        <div class="menu-section">
+        <!-- <div class="menu-section">
             <h3>Learning Styles</h3>
             <div class="menu-item">
                 <ul>
@@ -766,7 +766,7 @@ if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] != 1) {
             <div class="menu-item">
                 <a href="choose-loc.php"><span>+</span> Choose a location</a>
             </div>
-        </div>
+        </div> -->
         
     <div class="menu-section">
       <h3>Resources</h3>

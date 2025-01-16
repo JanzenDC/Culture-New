@@ -77,7 +77,7 @@ $conn->close();
             <a href="explore.php">Explore</a>
             <a href="notification.php">Notification</a>
             <div class="dropdown">
-                <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Menu</a>
+                <a href="#" class="dropdown-btn active" onclick="toggleDropdown()">Menu</a>
                 <div class="dropdown-content">
                     <a href="profile.php">Profile</a>
                     <a href="settings.php">Settings</a>
@@ -800,23 +800,6 @@ $conn->close();
                 </ul>
             </div>
 
-        <div class="menu-section">
-            <h3>Learning Styles</h3>
-            <div class="menu-item">
-                <ul>
-                    <li><input type="checkbox">Visual</li>
-                    <li><input type="checkbox">Auditory & Oral</li>
-                    <li><input type="checkbox">Read & Write</li>
-                    <li><input type="checkbox">Kinesthetic</li>
-                </ul>
-            </div>
-
-        <div class="menu-section">
-            <h3>Location</h3>
-            <div class="menu-item">
-                <a href="choose-loc.php"><span>+</span> Choose a location</a>
-            </div>
-        </div>
         
     <div class="menu-section">
       <h3>Resources</h3>

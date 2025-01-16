@@ -476,7 +476,7 @@
             </ul>
         </div>
 
-        <div class="menu-section">
+        <!-- <div class="menu-section">
             <h3>Learning Styles</h3>
             <div class="menu-item">
                 <ul>
@@ -485,7 +485,7 @@
                     <li><input type="checkbox">Read & Write</li>
                     <li><input type="checkbox">Kinesthetic</li>
                 </ul>
-            </div>
+            </div> -->
 
         <div class="menu-section">
             <h3>Location</h3>

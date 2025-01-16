@@ -136,15 +136,15 @@ $conn->close();
             <h1>Kulturabase</h1>
         </div>
         <div>
-            <a href="home.php" class="active">Home</a>
+            <a href="home.php" >Home</a>
             <a href="create-post.php">+ Create</a>
             <a href="explore.php">Explore</a>
             <a href="notification.php">Notification</a>
             <div class="dropdown">
-                <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Menu</a>
+                <a href="#" class="dropdown-btn active" onclick="toggleDropdown()" >Menu</a>
                 <div class="dropdown-content">
                     <a href="profile.php">Profile</a>
-                    <a href="settings.php">Settings</a>
+                    <a href="settings.php" >Settings</a>
                     <a href="#">Logout</a>
                 </div>
             </div>
@@ -265,7 +265,7 @@ $conn->close();
         box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         background-color: white;
     ">
-        <h2 style="margin-bottom: 15px; font-size: 20px; text-align: center;">Update Personal Info</h2>
+        <h2 style="margin-top: 80px; margin-bottom: 15px; font-size: 20px; text-align: center;">Update Personal Info</h2>
         <form method="POST" action="update_info.php" style="display: flex; flex-direction: column;">
             <div style="margin-bottom: 10px;">
                 <input 
