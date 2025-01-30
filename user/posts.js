@@ -1,13 +1,13 @@
 $(document).ready(function() {
-    let isAdmin = false; // Define isAdmin at the top level
+    let isAdmin = false;
     let currentUserId = null;
-    let allPosts = []; // Store all posts for filtering
+    let allPosts = [];
     let activeFilters = {
         cultureElements: [],
         learningStyles: []
     };
+
     function initializeFilters() {
-        // Culture Elements filters
         $('.menu-section a[href^="geography"], .menu-section a[href^="history"], .menu-section a[href^="demographics"], .menu-section a[href^="culture"]').click(function(e) {
             e.preventDefault();
             const element = $(this).text();
@@ -23,7 +23,6 @@ $(document).ready(function() {
             filterAndDisplayPosts();
         });
 
-        // Learning Styles filters
         $('.menu-section input[type="checkbox"]').change(function() {
             const style = $(this).parent().text().trim();
             
@@ -57,7 +56,6 @@ $(document).ready(function() {
         displayPosts(filteredPosts);
     }
 
-    // Modified fetchPosts function
     function fetchPosts() {
         $.ajax({
             url: 'posts_management.php',
@@ -66,19 +64,17 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 currentUserId = response.current_user_id;
-                isAdmin = response.isAdmin; // Get admin status from response
+                isAdmin = response.isAdmin;
 
-                allPosts = response.posts; // Store all posts
-                filterAndDisplayPosts(); // Apply any active filters
+                allPosts = response.posts;
+                filterAndDisplayPosts();
             },
             error: function(xhr, status, error) {
                 console.error('Error fetching posts:', error);
             }
         });
     }
-    
 
-    // Display posts function
     function displayPosts(posts) {
         const postDisplay = $('#post-display');
         postDisplay.empty();
@@ -88,13 +84,7 @@ $(document).ready(function() {
             postDisplay.append(postElement);
         });
     }
-    document.addEventListener('click', function (event) {
-        if (event.target.classList.contains('like-btn')) {
-            fetchPosts();
-        }
-    });
-    
-    // Create post element function
+
     function createPostElement(post) {
         const comments = post.comments.map(comment => `
             <div class="comment">
@@ -108,7 +98,7 @@ $(document).ready(function() {
                 </div>
             </div>
         `).join('');
-    
+
         const cultureElements = post.culture_elements ? `
             <div class="culture-elements">
                 <strong>Culture Elements:</strong>
@@ -119,7 +109,7 @@ $(document).ready(function() {
                 </ul>
             </div>
         ` : '';
-    
+
         const learningStyles = post.learning_styles ? `
             <div class="learning-styles">
                 <strong>Learning Styles:</strong>
@@ -130,20 +120,30 @@ $(document).ready(function() {
                 </ul>
             </div>
         ` : '';
-    
+
+        let mediaContent = '';
+        if (post.file_path) {
+            const fileExtension = post.file_path.split('.').pop().toLowerCase();
+            if (['mp4', 'webm', 'ogg'].includes(fileExtension)) {
+                mediaContent = `<video controls style="width: 100%;"><source src="${post.file_path}" type="video/${fileExtension}">Your browser does not support the video tag.</video>`;
+            } else if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
+                mediaContent = `<img src="${post.file_path}" alt="${post.title}" style="width: 100%;">`;
+            }
+        }
+
         const postHtml = `
             <div class="post" data-post-id="${post.id}">
                 <div class="post-header">
                     <img src="${post.profile_picture}" alt="${post.username}" class="profile-pic">
                     <span>${post.username}</span>
-                    ${(post.user_id == currentUserId  || isAdmin) ? `
+                    ${(post.user_id == currentUserId || isAdmin) ? `
                         <button class="delete-post" data-post-id="${post.id}">🗑️</button>
                     ` : ''}
                 </div>
                 <div class="post-content">
                     <h3>${post.title}</h3>
                     <p>${post.description}</p>
-                    ${post.file_path ? `<img src="${post.file_path}" alt="${post.title}" style="width: 100%;">` : ''}
+                    ${mediaContent}
                 </div>
                 ${cultureElements}
                 ${learningStyles}
@@ -166,12 +166,10 @@ $(document).ready(function() {
                 </div>
             </div>
         `;
-    
+
         return postHtml;
     }
-    
 
-    // Event Delegation for Dynamic Elements
     $(document).on('click', '.like-btn', function() {
         const postId = $(this).closest('.post').data('post-id');
         const likeBtn = $(this);
@@ -187,23 +185,21 @@ $(document).ready(function() {
             success: function(response) {
                 if (response.status === 'liked') {
                     likeBtn.addClass('liked');
-                    const likeCount = parseInt(likeBtn.text().split(' ')[0]);
+                    const likeCount = parseInt(likeBtn.text().split(' ')[1]);
                     likeBtn.text(`👍 ${likeCount + 1} Likes`);
                 } else {
                     likeBtn.removeClass('liked');
-                    const likeCount = parseInt(likeBtn.text().split(' ')[0]);
+                    const likeCount = parseInt(likeBtn.text().split(' ')[1]);
                     likeBtn.text(`👍 ${likeCount - 1} Likes`);
                 }
             }
         });
     });
 
-    // Comment toggle
     $(document).on('click', '.comment-toggle', function() {
         $(this).closest('.post').find('.comments-section').toggle();
     });
 
-    // Submit comment
     $(document).on('click', '.submit-comment', function() {
         const post = $(this).closest('.post');
         const postId = post.data('post-id');
@@ -229,55 +225,6 @@ $(document).ready(function() {
         }
     });
 
-    // Delete post
-    $(document).on('click', '.delete-post', function() {
-        if (!confirm('Are you sure you want to delete this post?')) return;
-
-        const postId = $(this).closest('.post').data('post-id');
-
-        $.ajax({
-            url: 'posts_management.php',
-            type: 'POST',
-            data: { 
-                action: 'delete_post', 
-                post_id: postId 
-            },
-            dataType: 'json',
-            success: function(response) {
-                if (response.status === 'success') {
-                    fetchPosts();
-                } else {
-                    alert(response.message);
-                }
-            }
-        });
-    });
-
-    // Delete comment
-    $(document).on('click', '.delete-comment', function() {
-        if (!confirm('Are you sure you want to delete this comment?')) return;
-
-        const commentId = $(this).data('comment-id');
-
-        $.ajax({
-            url: 'posts_management.php',
-            type: 'POST',
-            data: { 
-                action: 'delete_comment', 
-                comment_id: commentId 
-            },
-            dataType: 'json',
-            success: function(response) {
-                if (response.status === 'success') {
-                    fetchPosts();
-                } else {
-                    alert(response.message);
-                }
-            }
-        });
-    });
-
-    // Initial fetch of posts
     initializeFilters();
     fetchPosts();
 });
