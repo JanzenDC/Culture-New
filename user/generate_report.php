@@ -166,11 +166,10 @@ if (!isset($_SESSION['isAdmin']) || $_SESSION['isAdmin'] != 1) {
                     <div class="dropdown-content">
                         <a href="profile.php">Profile</a>
                         <a href="settings.php">Settings</a>
-                        <a href="#">Logout</a>
                     </div>
                 </div>
                 <a href="generate_report.php" class="active">Generate Report</a>
-                <a href="login.php">Log In</a>
+                <a href="login.php">Log Out</a>
             </div>
     </div>
 
