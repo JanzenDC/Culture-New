@@ -75,6 +75,66 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             justify-content: center; 
             align-items: center;
         }
+        .drag-drop-zone {
+        width: 100%;
+        height: 200px;
+        border: 2px dashed #ccc;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8f9fa;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin: 15px 0;
+    }
+
+    .drag-drop-zone.dragover {
+        background-color: #e3f2fd;
+        border-color: #2196f3;
+    }
+
+    .drag-drop-zone i {
+        font-size: 48px;
+        color: #666;
+        margin-bottom: 10px;
+    }
+
+    .drag-drop-zone p {
+        margin: 0;
+        color: #666;
+        text-align: center;
+    }
+
+    .file-preview {
+        margin-top: 15px;
+        text-align: center;
+    }
+
+    .file-preview img, 
+    .file-preview video {
+        max-width: 100%;
+        max-height: 200px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .file-name {
+        margin-top: 8px;
+        font-size: 14px;
+        color: #666;
+    }
+
+    .remove-file {
+        background: #ff4444;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 8px;
+    }
     </style>
     
     <!-- Navigation Bar -->
@@ -204,8 +264,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <textarea name="description" placeholder="Caption..." style="padding: 30px; border: 1px solid #ccc; border-radius: 4px; width: 100%; height: 120px;" required></textarea>
 
         <!-- File Upload -->
-        <input type="file" name="file" accept="image/*,video/*" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 100%;"> 
-
+        <div class="drag-drop-zone" id="drag-drop-zone">
+            <i class="fas fa-cloud-upload-alt"></i>
+            <p>Drag & drop your file here</p>
+            <p>or</p>
+            <p>Click to select a file</p>
+            <input type="file" name="file" id="file-input" accept="image/*,video/*" style="display: none;">
+        </div>
+        <div class="file-preview" id="file-preview"></div>
         <!-- Culture Elements (Hidden for Non-Admin Users) -->
         <?php if ($_SESSION['isAdmin'] == 1) { ?>
             <div id="culture-elements" style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
@@ -235,6 +301,99 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   
   <script>
+        const dragDropZone = document.getElementById('drag-drop-zone');
+    const fileInput = document.getElementById('file-input');
+    const filePreview = document.getElementById('file-preview');
+    const form = document.getElementById('post-form');
+
+    // Handle click on drag-drop zone
+    dragDropZone.addEventListener('click', () => fileInput.click());
+
+    // Handle drag events
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dragDropZone.addEventListener(eventName, preventDefaults, false);
+    });
+
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    // Add/remove dragover class
+    ['dragenter', 'dragover'].forEach(eventName => {
+        dragDropZone.addEventListener(eventName, () => {
+            dragDropZone.classList.add('dragover');
+        }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+        dragDropZone.addEventListener(eventName, () => {
+            dragDropZone.classList.remove('dragover');
+        }, false);
+    });
+
+    // Handle dropped files
+    dragDropZone.addEventListener('drop', handleDrop, false);
+    fileInput.addEventListener('change', handleFileSelect, false);
+
+    function handleDrop(e) {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        handleFiles(files);
+    }
+
+    function handleFileSelect(e) {
+        const files = e.target.files;
+        handleFiles(files);
+    }
+
+    function handleFiles(files) {
+        if (files.length > 0) {
+            const file = files[0];
+            fileInput.files = files;
+            showPreview(file);
+        }
+    }
+
+    function showPreview(file) {
+        filePreview.innerHTML = '';
+        
+        if (file.type.startsWith('image/')) {
+            const img = document.createElement('img');
+            img.file = file;
+            filePreview.appendChild(img);
+
+            const reader = new FileReader();
+            reader.onload = (e) => { img.src = e.target.result; };
+            reader.readAsDataURL(file);
+        } else if (file.type.startsWith('video/')) {
+            const video = document.createElement('video');
+            video.controls = true;
+            filePreview.appendChild(video);
+
+            const reader = new FileReader();
+            reader.onload = (e) => { video.src = e.target.result; };
+            reader.readAsDataURL(file);
+        }
+
+        // Add file name and remove button
+        const fileInfo = document.createElement('div');
+        fileInfo.className = 'file-name';
+        fileInfo.textContent = file.name;
+        filePreview.appendChild(fileInfo);
+
+        const removeButton = document.createElement('button');
+        removeButton.className = 'remove-file';
+        removeButton.textContent = 'Remove';
+        removeButton.onclick = removeFile;
+        filePreview.appendChild(removeButton);
+    }
+
+    function removeFile(e) {
+        e.preventDefault();
+        fileInput.value = '';
+        filePreview.innerHTML = '';
+    }
     function previewFile() {
         const fileInput = document.querySelector('input[name="file"]');
         const filePreview = document.getElementById('file-preview');
