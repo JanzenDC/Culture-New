@@ -7,6 +7,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
+    // Password validation: must be at least 8 characters, contain uppercase, lowercase, number, and special character
+    $password_pattern = "/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/";
+
+    if (!preg_match($password_pattern, $password)) {
+        echo "<script>
+                alert('Password must be at least 8 characters long and include an uppercase letter, a lowercase letter, a number, and a special character.');
+                window.location.href = 'signup.php';
+              </script>";
+        exit();
+    }
+
     if ($password !== $confirm_password) {
         echo "<script>
                 alert('Passwords do not match!');
@@ -209,7 +220,7 @@ $conn->close();
             <h2>Sign Up</h2>
             <form action="signup.php" method="POST">
                 <div class="input-container">
-                    <input type="text" name="email" placeholder="Email Address" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
                 </div>
                 <div class="input-container">
                     <input type="text" name="username" placeholder="Username" required>
