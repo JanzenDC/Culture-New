@@ -100,27 +100,6 @@ $conn->close();
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-    <div class="navbar">
-        <div style="display: flex; align-items: center;">
-            <img src="logo.png" alt="Kulturifiko Logo">
-            <h1>Kulturabase</h1>
-        </div>
-        <div>
-            <a href="home.php">Home</a>
-            <a href="create-post.php">+ Create</a>
-            <a href="notification.php">Notification</a>
-            <div class="dropdown">
-                <a href="#" class="dropdown-btn" onclick="toggleDropdown()">Menu</a>
-                <div class="dropdown-content">
-                    <a href="#">Profile</a>
-                    <a href="settings.php">Settings</a>
-                </div>
-            </div>
-            <a href="login.php" class="active">Log Out</a>
-        </div>
-    </div>
-
     <style>
     /* Navigation Bar */
         .navbar {
